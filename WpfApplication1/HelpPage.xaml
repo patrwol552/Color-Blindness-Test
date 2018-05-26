@@ -1,0 +1,34 @@
+﻿<Page x:Class="WpfApplication1.HelpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="550"
+      Title="HelpPage" WindowWidth="550" WindowHeight="550" >
+
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="290*"/>
+                <RowDefinition Height="391*"/>
+                <RowDefinition Height="115*"/>
+            </Grid.RowDefinitions>
+            <Image  Grid.Row="0" Source="Images/color-palette.png" Width="200" Height="200" ></Image>
+            <Label VerticalAlignment="Top" Grid.Row="1" HorizontalAlignment="Center" FontFamily="Segoe UI Light" FontSize="30" Margin="16,0" Grid.RowSpan="2" Height="410" Width="510">
+                <Label.Content>
+                    <AccessText TextWrapping="Wrap" Text="Color blindness, also known as color vision deficiency, is the decreased ability to see color or differences in color.
+                            
+                                Ishihara test consists of a set of colored dotted plates, each of them showing either a number or a path." 
+                            Height="400" Width="500" TextAlignment="Center" />
+                </Label.Content>
+            </Label>
+            <Button x:Name="button" Content="BACK" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="276" Height="50" FontFamily="Segoe UI Light" FontSize="22"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="button_Click" />
+
+
+
+
+        </Grid>
+    
+</Page>

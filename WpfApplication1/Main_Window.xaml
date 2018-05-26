@@ -1,0 +1,31 @@
+﻿<Page x:Class="WpfApplication1.Main_Window"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      
+      Title="Main_Window" WindowHeight="720" WindowWidth="600" ScrollViewer.VerticalScrollBarVisibility="Hidden" Cursor="Arrow"  
+      >
+
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" >
+                
+            <Grid.RowDefinitions>
+                <RowDefinition Height="73*"/>
+                <RowDefinition Height="134*"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="#FFE6E4E4" BorderBrush="Black" BorderThickness="0"/>
+
+        <Label x:Name="ApplicationTitle" Content="COLOR BLINDNESS TEST" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" FontFamily="Segoe UI Light" FontWeight="Light" />
+            <Image x:Name="ApplicationIcon"  Height="220"  Width="220"  Grid.Row="1" Source="Images/eyes.png"/>
+            <Button x:Name="StartBtn" Content="START" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="276" Height="50" FontFamily="Segoe UI Light" FontSize="22"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="StartBtn_Click"/>
+            <Button x:Name="HelpBtn" Content="HELP" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Width="276" Height="50"  FontFamily="Segoe UI Light" FontSize="22" Background="DarkGray" BorderBrush="DarkGray" Click="HelpBtn_Click"/>
+
+
+        </Grid>
+    
+</Page>

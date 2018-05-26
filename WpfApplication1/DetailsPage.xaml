@@ -1,0 +1,30 @@
+﻿<Page x:Class="WpfApplication1.DetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplication1"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="550"
+      Title="DetailsPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="290*"/>
+            <RowDefinition Height="350*"/>
+            <RowDefinition Height="115*"/>
+        </Grid.RowDefinitions>
+        <Image Source="Images/colors.png" Width="200" Height="200"  Grid.Row="0" />
+
+        <Label VerticalAlignment="Top" HorizontalAlignment="Center" FontFamily="Segoe UI Light" FontSize="30" Height="250" Width="510" Grid.Row="1">
+            <Label.Content>
+                <AccessText TextWrapping="Wrap" Text="You probably have a protanomaly, which is a reduced sensitivity to red light. 
+                            
+                            
+                            Ask your doctor for more informations." 
+                            Height="400" Width="500" TextAlignment="Center" />
+            </Label.Content>
+        </Label>
+        <Button x:Name="BackFromDetailsBTN" Content="BACK" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="276" Height="50" FontFamily="Segoe UI Light" FontSize="22"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="BackFromDetailsBTN_Click" />
+    </Grid>
+</Page>
