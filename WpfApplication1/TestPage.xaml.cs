@@ -24,8 +24,10 @@ namespace WpfApplication1
         Answers answers;
         ResultsPage resultsPage;
         
-        List<string> plateString = new List<string>();
+        List<string> answersList = new List<string>();
         List<string> platesPng = new List<string>();
+
+        string fullPath = @"C:\studia\pum projekt\WpfApplication1\WpfApplication1\Plates\";
 
         public TestPage()
         {
@@ -37,7 +39,7 @@ namespace WpfApplication1
             opt2btn.IsEnabled = false;
             opt3btn.IsEnabled = false;
 
-            answers.CreateOptions(plateString, platesPng);
+            answers.CreateOptions(answersList, platesPng);
 
         }
 
@@ -46,50 +48,65 @@ namespace WpfApplication1
 
         private void NextPlateBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            if (j== platesPng.Count-1)
+            {
+                NextPlateBtn.Content = "FINISH";
+            }
             
-                    if (j == platesPng.Count-1)
-                    {
-                        this.NavigationService.Navigate(resultsPage);
+                if (j == platesPng.Count)
+            {
+                this.NavigationService.Navigate(resultsPage);
+            }
 
-                    }
+            else
+            {
+                opt1btn.IsChecked = false;
+                opt2btn.IsChecked = false;
+                opt3btn.IsChecked = false;
+             
+                opt1btn.Content = answersList[i];
+                opt2btn.Content = answersList[i + 1];
+                opt3btn.Content = answersList[i + 2];
+             
+            ProgressLabel.Content = (j+1) + "/" + platesPng.Count.ToString();
+            IshiharaPlate.Source = new BitmapImage(new Uri(fullPath.ToString() + platesPng[j].ToString(), UriKind.RelativeOrAbsolute));
 
-             
-             opt1btn.IsChecked = false;
-             opt2btn.IsChecked = false;
-             opt3btn.IsChecked = false;
-             
-             opt1btn.Content = plateString[i];
-             opt2btn.Content = plateString[i + 1];
-             opt3btn.Content = plateString[i + 2];
-             
-              ProgressLabel.Content = (j+1) + "/" + platesPng.Count.ToString();
-              IshiharaPlate.Source = new BitmapImage(new Uri(@"C:\studia\pum projekt\WpfApplication1\WpfApplication1\Plates\" + platesPng[j].ToString(), UriKind.RelativeOrAbsolute));
 
-                if (opt1btn.IsChecked == true || opt2btn.IsChecked == true || opt3btn.IsChecked == true)
+
+            if (opt1btn.IsChecked == true || opt2btn.IsChecked == true || opt3btn.IsChecked == true)
+
                 {
+
                     NextPlateBtn.IsEnabled = true;
                   
-                   
                 }
 
             i=i+3;
             j++;
 
+            }
+
+             
+             
+
         }
+
 
         private void StartBtn_Click(object sender, RoutedEventArgs e)
         {
+
+
             StartBtn.Visibility = Visibility.Hidden;
             opt1btn.IsEnabled = true;
             opt2btn.IsEnabled = true;
             opt3btn.IsEnabled = true;
-            IshiharaPlate.Source= new BitmapImage(new Uri(@"C:\studia\pum projekt\WpfApplication1\WpfApplication1\Plates\" + platesPng[0].ToString(), UriKind.RelativeOrAbsolute));
-            opt1btn.Content = plateString[0];
-            opt2btn.Content = plateString[1];
-            opt3btn.Content = plateString[2];
+            IshiharaPlate.Source= new BitmapImage(new Uri(fullPath.ToString() + platesPng[0].ToString(), UriKind.RelativeOrAbsolute));
+            opt1btn.Content = answersList[0];
+            opt2btn.Content = answersList[1];
+            opt3btn.Content = answersList[2];
 
             ProgressLabel.Visibility = Visibility.Visible;
-            
             TestLabel.Visibility = Visibility.Visible;
             NextPlateBtn.Visibility = Visibility.Visible;
             opt1btn.Visibility = Visibility.Visible;

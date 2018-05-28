@@ -10,18 +10,18 @@ namespace WpfApplication1
     class Answers
     {
         
-        public void CreateOptions(List<string> tmp, List<string> namePng)
+        public void CreateOptions(List<string> answersList, List<string> namePng)
         {
-            var plateString = new List<string>();
+            
             string[] patchString = System.IO.Directory.GetFiles(@"C:\studia\pum projekt\WpfApplication1\WpfApplication1\Plates\");
             foreach (var item in patchString)
             {
-                var containsPng = (item.Split('\\')[6]);
-                namePng.Add(containsPng.ToString());
-                var temp = (containsPng.Split('-'));
-                tmp.Add(temp[1]);
-                tmp.Add(temp[2]);
-                tmp.Add(temp[3]);
+                var fullPath = (item.Split('\\')[6]);
+                namePng.Add(fullPath.ToString());
+                var splited = (fullPath.Split('-'));
+                answersList.Add(splited[1]);
+                answersList.Add(splited[2]);
+                answersList.Add(splited[3]);
                 
             }
 
