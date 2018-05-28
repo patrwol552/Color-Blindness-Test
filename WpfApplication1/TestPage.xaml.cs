@@ -23,7 +23,7 @@ namespace WpfApplication1
     {
         Answers answers;
         ResultsPage resultsPage;
-        
+
         List<string> answersList = new List<string>();
         List<string> platesPng = new List<string>();
 
@@ -35,9 +35,6 @@ namespace WpfApplication1
             answers = new Answers();
             resultsPage = new ResultsPage();
 
-            opt1btn.IsEnabled = false;
-            opt2btn.IsEnabled = false;
-            opt3btn.IsEnabled = false;
 
             answers.CreateOptions(answersList, platesPng);
 
@@ -48,6 +45,8 @@ namespace WpfApplication1
 
         private void NextPlateBtn_Click(object sender, RoutedEventArgs e)
         {
+            NextPlateBtn.IsEnabled = false;
+
 
             if (j== platesPng.Count-1)
             {
@@ -57,6 +56,7 @@ namespace WpfApplication1
                 if (j == platesPng.Count)
             {
                 this.NavigationService.Navigate(resultsPage);
+                
             }
 
             else
@@ -68,27 +68,17 @@ namespace WpfApplication1
                 opt1btn.Content = answersList[i];
                 opt2btn.Content = answersList[i + 1];
                 opt3btn.Content = answersList[i + 2];
-             
-            ProgressLabel.Content = (j+1) + "/" + platesPng.Count.ToString();
-            IshiharaPlate.Source = new BitmapImage(new Uri(fullPath.ToString() + platesPng[j].ToString(), UriKind.RelativeOrAbsolute));
+
+
+                ProgressLabel.Content = (j+1) + "/" + platesPng.Count.ToString();
+                IshiharaPlate.Source = new BitmapImage(new Uri(fullPath.ToString() + platesPng[j].ToString(), UriKind.RelativeOrAbsolute));
 
 
 
-            if (opt1btn.IsChecked == true || opt2btn.IsChecked == true || opt3btn.IsChecked == true)
-
-                {
-
-                    NextPlateBtn.IsEnabled = true;
-                  
-                }
-
-            i=i+3;
-            j++;
+                i =i+3;
+                j++;
 
             }
-
-             
-             
 
         }
 
@@ -109,9 +99,32 @@ namespace WpfApplication1
             ProgressLabel.Visibility = Visibility.Visible;
             TestLabel.Visibility = Visibility.Visible;
             NextPlateBtn.Visibility = Visibility.Visible;
+            NextPlateBtn.IsEnabled = false;
             opt1btn.Visibility = Visibility.Visible;
             opt2btn.Visibility = Visibility.Visible;
             opt3btn.Visibility = Visibility.Visible;
+        }
+
+       
+
+       private void opt1_Checked(object sender, RoutedEventArgs e)
+        {
+            NextPlateBtn.IsEnabled = true;
+        }
+
+        private void opt2_Checked(object sender, RoutedEventArgs e)
+        {
+            NextPlateBtn.IsEnabled = true;
+        }
+
+        private void opt3_Checked(object sender, RoutedEventArgs e)
+        {
+            NextPlateBtn.IsEnabled = true;
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
         }
     }
 }

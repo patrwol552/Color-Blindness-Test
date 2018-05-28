@@ -25,11 +25,11 @@
         <Border Grid.Row="0" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="0.2"/>
 
         <Label x:Name="label" Content="Your score:" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="220" FontFamily="Segoe UI Light" FontSize="46"/>
-        <Label x:Name="Score" Content="20%" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
+        <Label x:Name="Score" Content="40%" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
         <Image x:Name="Right" HorizontalAlignment="Stretch" Height="100" Grid.Row="1" Grid.Column="0"  VerticalAlignment="Stretch" Width="100" Source="Images/right.jpg"/>
         <Image x:Name="Wrong" HorizontalAlignment="Stretch" Height="100" Grid.Row="2" Grid.Column="0"  VerticalAlignment="Stretch" Width="100" Source="Images/wrong.jpg"/>
-        <Label x:Name="NumberOfRight" Content="2" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
-        <Label x:Name="NumberOfWrong" Content="8" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
+        <Label x:Name="NumberOfRight" Content="4" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
+        <Label x:Name="NumberOfWrong" Content="10" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Stretch" Height="80" Width="200" FontFamily="Segoe UI Light" FontSize="46"/>
         <Button x:Name="DetailsBtn" Content="DETAILS" HorizontalAlignment="Center" Grid.Row="3" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="276" Height="55" FontFamily="Segoe UI Light" FontSize="26"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="DetailsBtn_Click"/>
         <Button x:Name="GetResultsBtn" Content="GET RESULTS" HorizontalAlignment="Center" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="276" Height="55" FontFamily="Segoe UI Light" FontSize="26"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="GetResultsBtn_Click"/>
         <Button x:Name="RestartBtn" Content="RESTART" HorizontalAlignment="Center" Grid.Row="5" Grid.ColumnSpan="2" VerticalAlignment="Center" Width="276" Height="55" FontFamily="Segoe UI Light" FontSize="26"  Background="WhiteSmoke" BorderBrush="DarkGray" Click="RestartBtn_Click"/>
